@@ -1,0 +1,37 @@
+import mongoose from "mongoose";
+
+const PeopleSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    age: {
+        type: Number,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    MobileNumber:{
+        type: Number,
+        required: true
+    },
+    PassportPhoto:{
+        type:String,
+        required: true
+    },
+    photopath: {
+        type: String,
+        required: true
+    },
+},{timestamps: true})
+
+const People = mongoose.model('People', PeopleSchema)
+
+export default People;
